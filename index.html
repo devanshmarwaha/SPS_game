@@ -1,0 +1,296 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Game</title>
+    <style>
+        h1 {
+            font-weight: 300;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        
+        #letscore {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        #letscore p {
+            margin: 10px;
+            font-size: large;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        
+        #myscore,
+        #comscore {
+            color: rgb(92, 92, 240);
+            font-size: larger;
+        }
+        
+        .bttns img {
+            width: 70px;
+        }
+        
+        .bttns button {
+            background-color: transparent;
+            border: none;
+            width: 70px;
+            margin: 10px;
+            outline: none;
+            transition: transform 0.5s;
+            text-align: center;
+        }
+        
+        .bttns button:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+        
+        #c {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        
+        #play {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #me {
+            margin-right: 50px;
+        }
+        
+        #com {
+            margin-left: 50px;
+        }
+        
+        #me,
+        #com p {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: large;
+        }
+        
+        #mee,
+        #comm {
+            width: 70px;
+            height: 70px;
+            border-color: rgb(80, 162, 238);
+            border-width: 2px;
+            border-style: dotted;
+            padding: 5px;
+        }
+        
+        #main {
+            position: fixed;
+            top: -20;
+            right: 0;
+            left: 0;
+            background-color: rgb(80, 162, 238);
+            color: whitesmoke;
+            padding: 10px;
+        }
+        
+        #main1 {
+            background-color: rgb(80, 162, 238);
+            color: whitesmoke;
+            padding: 5px;
+            width: 100px;
+            border-radius: 20px;
+        }
+        
+        #letscore {
+            background-color: rgb(219, 212, 212);
+            width: 250px;
+            border-radius: 20px;
+        }
+        
+        .fa {
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            border-radius: 50%;
+        }
+        
+        .fa-linkedin {
+            background-color: rgb(40, 103, 178);
+            color: white;
+        }
+        
+        .fa-linkedin:hover {
+            background-color: cornsilk;
+            color: blue
+        }
+        
+        .fa-instagram {
+            background-color: rgb(214, 104, 41);
+            color: white;
+        }
+        
+        .fa-instagram:hover {
+            background-color: cornsilk;
+            color: orangered;
+            outline: none;
+        }
+        
+        .fa-github {
+            background-color: rgb(50, 51, 53);
+            color: white;
+        }
+        
+        .fa-github:hover {
+            background-color: cornsilk;
+            color: rgb(11, 11, 14)
+        }
+        
+        .fa-at {
+            background-color: rgb(224, 32, 32);
+            color: white;
+        }
+        
+        .fa-at:hover {
+            background-color: cornsilk;
+            color: rgb(241, 22, 22)
+        }
+        
+        .fa-phone {
+            background-color: rgb(23, 146, 54);
+            color: white;
+        }
+        
+        .fa-phone:hover {
+            background-color: cornsilk;
+            color: rgb(32, 155, 42)
+        }
+        
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        
+        #made {
+            font-size: 12px;
+            margin-top: 3px;
+        }
+    </style>
+    <script>
+        var myscore = 0;
+        var compscore = 0;
+
+        function paper() {
+
+            var choice = Math.floor(Math.random() * 3);
+            document.getElementById("mee").src = "paper.png";
+            switch (choice) {
+                case 0:
+                    document.getElementById("comm").src = "paperr.png";
+                    break;
+                case 1:
+                    document.getElementById("comm").src = "rock.png";
+                    myscore += 1;
+                    document.getElementById("myscore").innerHTML = myscore;
+                    break;
+                case 2:
+                    document.getElementById("comm").src = "scissors.png";
+                    compscore += 1;
+                    document.getElementById("comscore").innerHTML = compscore;
+                    break;
+            }
+        }
+
+        function rock() {
+
+            var choice = Math.floor(Math.random() * 3);
+            document.getElementById("mee").src = "rockr.png";
+            switch (choice) {
+                case 0:
+                    document.getElementById("comm").src = "rock.png";
+
+                    break;
+                case 1:
+                    document.getElementById("comm").src = "paperr.png";
+                    compscore += 1;
+                    document.getElementById("comscore").innerHTML = compscore;
+                    break;
+                case 2:
+                    document.getElementById("comm").src = "scissors.png";
+                    myscore += 1;
+                    document.getElementById("myscore").innerHTML = myscore;
+
+                    break;
+            }
+        }
+
+        function scissor() {
+
+            var choice = Math.floor(Math.random() * 3);
+            document.getElementById("mee").src = "scissorsr.png";
+            switch (choice) {
+                case 0:
+                    document.getElementById("comm").src = "paperr.png";
+                    myscore += 1;
+                    document.getElementById("myscore").innerHTML = myscore;
+                    break;
+                case 1:
+                    document.getElementById("comm").src = "scissors.png";
+
+                    break;
+
+                case 2:
+                    document.getElementById("comm").src = "rock.png";
+                    compscore += 1;
+                    document.getElementById("comscore").innerHTML = compscore;
+                    break;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <center>
+        <div id="score">
+            <h1 id="main">Stone Paper Scissor</h1><br><br><br>
+            <h1 id="main1">Scores</h1>
+            <div id="letscore">
+
+                <p>My Score<br><span id="myscore">0</span></p>
+                <p>Comp.'s Score<br><span id="comscore">0</span></p>
+
+            </div>
+            <div id="game">
+
+                <div class="bttns">
+                    <button onclick="paper()"><img src="paper.png"><span id="c"> Paper </span></button>
+                    <button onclick="rock()"><img src="rockr.png"><span id="c"> Rock </span></button>
+                    <button onclick="scissor()"><img src="scissorsr.png"><span id="c"> Scissor </span></button>
+                </div>
+            </div>
+            <div id="play">
+                <div id="me">
+                    <p>Me</p>
+                    <img src="img.png" id="mee">
+                </div>
+                <div id="com">
+                    <p>Computer</p>
+                    <img src="img.png" id="comm">
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <a href="mailto:devansh.marwaha400@gmail.com"><i class="fa fa-at" style="font-size:10px;"></i></a>
+            <a href="tel:8968096689"><i class="fa fa-phone"style="font-size:10px;"></i></a>
+            <a class="lol" href="https://github.com/devanshmarwaha"><i class="fa fa-github" style="font-size:10px;"></i></a>
+            <a href="https://www.linkedin.com/in/devansh-marwaha-a548b918b"><i class="fa fa-linkedin" style="font-size:10px;"></i></a>
+            <a href="http://instagram.com/devansh._.marwaha"><i class="fa fa-instagram" style="font-size:10px;"></i></a>
+            <p id="made">Made By Devansh Marwaha</p>
+        </div>
+    </center>
+</body>
+
+</html>
